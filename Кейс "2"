@@ -1,0 +1,25 @@
+# Определяем базовый класс
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return "Some sound"
+
+# Определяем производный класс
+class Dog(Animal):
+    def speak(self):
+        return "Bark"
+
+# Тестовая программа
+def main():
+    # Создаем экземпляр базового класса
+    generic_animal = Animal("Generic Animal")
+    print(f"{generic_animal.name} says: {generic_animal.speak()}")
+
+    # Создаем экземпляр производного класса
+    dog = Dog("Rex")
+    print(f"{dog.name} says: {dog.speak()}")
+
+if __name__ == "__main__":
+    main()
