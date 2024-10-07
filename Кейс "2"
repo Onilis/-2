@@ -1,25 +1,21 @@
-# Определяем базовый класс
-class Animal:
-    def __init__(self, name):
-        self.name = name
-
-    def speak(self):
-        return "Some sound"
-
-# Определяем производный класс
-class Dog(Animal):
-    def speak(self):
-        return "Bark"
-
-# Тестовая программа
-def main():
-    # Создаем экземпляр базового класса
-    generic_animal = Animal("Generic Animal")
-    print(f"{generic_animal.name} says: {generic_animal.speak()}")
-
-    # Создаем экземпляр производного класса
-    dog = Dog("Rex")
-    print(f"{dog.name} says: {dog.speak()}")
-
-if __name__ == "__main__":
-    main()
+python
+class Figure:
+    """Базовый класс для фигур."""
+    def get_area(self):
+        """Абстрактный метод для вычисления площади."""
+        raise NotImplementedError("Метод get_area() должен быть переопределен в производном классе.")
+class Rectangle(Figure):
+    """Производный класс для прямоугольника."""
+    def __init__(self, width, height):
+        """Инициализация прямоугольника."""
+        self.width = width
+        self.height = height
+    def get_area(self):
+        """Вычисление площади прямоугольника."""
+        return self.width * self.height
+# Создание объекта прямоугольника
+rectangle = Rectangle(5, 10)
+# Вычисление площади прямоугольника
+area = rectangle.get_area()
+# Вывод результата
+print(f"Площадь прямоугольника: {area}")
